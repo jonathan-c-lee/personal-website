@@ -1,3 +1,22 @@
+@import url("https://fonts.googleapis.com/css?family=DM+Sans:400|Work+Sans:400");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+    html {
+        font-family: DM Sans, Work Sans, sans-serif;
+    }
+}
+
+@layer utilities {
+    .horizontal-line {
+        display: inline-block;
+        content: '';
+        border-top: .3rem solid;
+        width: 14rem;
+        margin: 0 1.5rem;
+        border-radius: 50vw;
+        transform: translateY(-1.25rem);
+    }
+}
