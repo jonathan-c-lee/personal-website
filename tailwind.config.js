@@ -5,11 +5,7 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {
-      backgroundImage: {
-        'home-background': "url('./assets/home-background.JPG')",
-      }
-    },
+    extend: {},
   },
   plugins: [
     require('tailwindcss-animated'),
