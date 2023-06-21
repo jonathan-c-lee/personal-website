@@ -13,6 +13,7 @@ export default {
   },
   plugins: [
     require('tailwindcss-animated'),
+    require('taos/plugin'),
   ],
 }
 
