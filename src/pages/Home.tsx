@@ -1,10 +1,62 @@
+import { useRef } from 'react';
+import { motion } from 'framer-motion';
+
+const section = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      when: 'beforeChildren',
+      staggerChildren: 1
+    }
+  }
+};
+
+const p = {
+  hidden: {
+    opacity: 0,
+    y: -100
+  },
+  visible: {
+    opacity: 1,
+    y: 0
+  }
+};
+
 const Home = (): JSX.Element => {
+  const scrollRef = useRef(null);
+
   return (
-    <section className="snap-center h-screen bg-[url('./assets/home-background.JPG')] bg-fixed bg-center bg-no-repeat bg-cover -z-1 flex flex-col content-center justify-center text-center p-0">
-      <p className="text-6xl before:horizontal-line after:horizontal-line">Hey, I'm</p>
-      <p className="text-9xl">Jonathan Lee</p>
-      <p className="text-5xl">Software Engineer &#183; Roboticist &#183; Mechanical Engineer</p>
-    </section>
+    <motion.section
+      ref={scrollRef}
+      initial="hidden"
+      whileInView="visible"
+      variants={section}
+      viewport={{ once: true }}
+      className="snap-center bg-[url('./assets/home-background.JPG')] bg-image-full -z-1 flex flex-col content-center justify-center text-center p-0"
+    >
+      <motion.p
+        variants={p}
+        viewport={{ root: scrollRef }}
+        className="text-6xl before:horizontal-line after:horizontal-line"
+      >
+        Hey, I'm
+      </motion.p>
+      <motion.p
+        variants={p}
+        viewport={{ root: scrollRef }}
+        className="text-9xl"
+      >
+        Jonathan Lee
+      </motion.p>
+      <motion.p
+        variants={p}
+        viewport={{ root: scrollRef }}
+        className="text-5xl"
+      >
+        Software Engineer &#183; Roboticist &#183; Mechanical Engineer
+      </motion.p>
+    </motion.section>
   );
 };
 
