@@ -9,6 +9,12 @@
     }
 }
 
+@layer components {
+    .bg-image-full {
+        @apply h-screen bg-fixed bg-center bg-no-repeat bg-cover;
+    }
+}
+
 @layer utilities {
     .horizontal-line {
         display: inline-block;
