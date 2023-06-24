@@ -14,12 +14,10 @@ const section = {
 
 const p = {
   hidden: {
-    opacity: 0,
-    y: -100
+    opacity: 0
   },
   visible: {
-    opacity: 1,
-    y: 0
+    opacity: 1
   }
 };
 
@@ -33,7 +31,7 @@ const Home = (): JSX.Element => {
       whileInView="visible"
       variants={section}
       viewport={{ once: true }}
-      className="snap-center bg-[url('./assets/home-background.JPG')] bg-image-full -z-1 flex flex-col content-center justify-center text-center p-0"
+      className="snap-center bg-[url('./assets/home-background.JPG')] bg-image-full -z-[1] flex flex-col content-center justify-center text-center p-0"
     >
       <motion.p
         variants={p}
