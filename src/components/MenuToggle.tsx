@@ -16,6 +16,11 @@ const Path = (props: any): JSX.Element => {
   );
 };
 
+const pathHoverVariant = {
+  stroke: [null, null, "rgba(95, 75, 139, 1)"],
+  transition: { times: [0, 0.75, 1] }
+}
+
 interface MenuToggleProps {
   isOpen: boolean;
   toggle: React.MouseEventHandler<HTMLButtonElement>;
@@ -59,7 +64,7 @@ const MenuToggle = ({ isOpen, toggle }: MenuToggleProps): JSX.Element => {
           variants={{
             open: { d: "M 12 12 L 24 24" },
             closed: { d: "M 9.75 12.75 L 26.25 12.75" },
-            hovered: { stroke: "rgba(95, 75, 139, 1)" }
+            hovered: pathHoverVariant
           }}
         />
         <Path
@@ -67,14 +72,14 @@ const MenuToggle = ({ isOpen, toggle }: MenuToggleProps): JSX.Element => {
           variants={{
             open: { opacity: 0 },
             closed: { opacity: 1 },
-            hovered: { stroke: "rgba(95, 75, 139, 1)" }
+            hovered: pathHoverVariant
           }}
         />
         <Path
           variants={{
             open: { d: "M 12 24 L 24 12" },
             closed: { d: "M 9.75 23.25 L 26.25 23.25" },
-            hovered: { stroke: "rgba(95, 75, 139, 1)" }
+            hovered: pathHoverVariant
           }}
         />
       </svg>
