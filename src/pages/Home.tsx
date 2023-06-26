@@ -31,7 +31,7 @@ const Home = (): JSX.Element => {
       whileInView="visible"
       variants={section}
       viewport={{ once: true }}
-      className="snap-center bg-[url('./assets/home-background.JPG')] bg-image-full -z-[1] flex flex-col content-center justify-center text-center p-0"
+      className="snap-center bg-[url('./assets/home-background.JPG')] bg-image-full -z-[1] flex flex-col content-center justify-center text-center p-0 text-white"
     >
       <motion.p
         variants={p}
