@@ -28,7 +28,7 @@ interface MenuToggleProps {
 
 const MenuToggle = ({ isOpen, toggle }: MenuToggleProps): JSX.Element => {
   const [isHovered, setHovered] = useState(false);
-  let variant = [isOpen ? "open" : "closed"];
+  const variant = [isOpen ? "open" : "closed"];
   if (isHovered) variant.push("hovered");
 
   return (
@@ -44,6 +44,7 @@ const MenuToggle = ({ isOpen, toggle }: MenuToggleProps): JSX.Element => {
           delay: animationTime
         }
       }}
+      whileTap={{ scale: 1.1 }}
       initial={false}
       animate={variant}
       className="select-none cursor-pointer fixed z-[999] bg-transparent outline-none border-none top-6 right-6 w-20 h-20 rounded-full"
